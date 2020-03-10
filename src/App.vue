@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <div v-bind:class="{nav: isNav=true}">
+    <div v-bind:class="{nav: isNav}">
       <router-link to="/">Обо мне</router-link> 
       <router-link to="/work">Опыт работы</router-link>
       <router-link to="/biography">Биография</router-link>
@@ -10,12 +10,16 @@
   </div>
 </template>
 
-// <script>
-// let app = new Vue({
-//   el: '.app',
-//   data: {isNav: true}
-// })
-// </script>
+<script>
+export default {
+  data() { return {
+    isNav: true
+   }
+     
+ }
+}
+</script>
+
 
 <style>
 .visually-hidden {

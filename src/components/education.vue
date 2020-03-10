@@ -1,6 +1,6 @@
 <template>
   <div class="education"
-       v-bind:class="{uppercaseText: isActive=false}">
+       v-bind:class="{uppercaseText: isActive}">
     <p>С ранних лет я проявлял тягу к естественным наукам, в особенности к биологии. В десятом классе выйграл районно-городскую олимпиаду по биологии, на областной занял шестое место. Ни минуты не раздумывал, на кого пойти учиться.
     Я люблю читать, довольно много уделяю этому времени (профессиональную, художественную и научно-популярную литературу), люблю изучать что-то новое.</p>
     <p>На работе ответственен, стараюсь добиться максимального результата, пунктуален, вежлив.</p>
@@ -19,25 +19,22 @@
 </template>
 
 <script>
-  import education_item from '@/components/education_item'
-  
-
-  // data: {
-  //   isNav: true,
-  //   isActive: true
-  // }
-  
-  
+import education_item from '@/components/education_item' 
 
 export default {
   name: 'education',
   props: ['education_places'],
   components: {
     education_item
-  } 
+  },
+  
+  data() { return {
+    isActive: false
+   }
+     
+ }
+
 }
-
-
 
 </script>
 
@@ -54,7 +51,6 @@ export default {
     margin: 0 auto;
     max-width: 960px;
   }
-
 
   .education h2 {
       margin-top: 3em;
