@@ -15,11 +15,9 @@ export default {
   data() { return {
     isNav: true
    }
-     
- }
+  }  
 }
 </script>
-
 
 <style>
 .visually-hidden {
@@ -64,4 +62,5 @@ export default {
 .nav a.router-link-exact-active {
   color: #739e0c;;
 }
+
 </style>

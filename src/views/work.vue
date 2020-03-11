@@ -1,5 +1,5 @@
 <template>
-  <div class="work">
+  <div class="work" v-bind:class="{darkTheme: isDark}">
     <div class="container">
     <h1>Опыт работы</h1>
 				<table>
@@ -33,17 +33,44 @@
           </tr>
         </table>
         </div>
+        <vueFooter />
   </div>
 </template>
+
+<script>
+import vueFooter from '@/components/vueFooter'
+export default {
+name: 'work',
+props:{
+  isDark: Boolean
+},
+
+components: {
+    vueFooter
+  },
+  data() { return {
+    isActive: false
+   }
+  }
+}
+</script>
 
 <style scoped>
   
 .work {
   background: #f8ffe8; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  #f8ffe8 50%, #e3f5ab 100%, #b7df2d 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(center, ellipse cover,  #f8ffe8 50%,#e3f5ab 100%,#b7df2d 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at center,  #f8ffe8 50%,#e3f5ab 100%,#b7df2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8ffe8', endColorstr='#b7df2d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: -moz-radial-gradient(center, ellipse cover,  #f8ffe8 50%, #e3f5ab 100%, #b7df2d 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover,  #f8ffe8 50%,#e3f5ab 100%,#b7df2d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center,  #f8ffe8 50%,#e3f5ab 100%,#b7df2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8ffe8', endColorstr='#b7df2d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.darkTheme {
+  background: #253304; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  #253304 50%, #e3f5ab 100%, #b7df2d 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover,  #253304 50%,#e3f5ab 100%,#b7df2d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center,  #253304 50%,#e3f5ab 100%,#b7df2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8ffe8', endColorstr='#b7df2d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 td {
