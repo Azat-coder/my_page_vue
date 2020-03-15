@@ -2,7 +2,7 @@
     <div class="vueFooter" v-bind:class="{dark:isDark}"> 
         <div class="container">
             <div class="checkbox-container">
-             <input type="checkbox" id="pageColor" v-model="isDark"> 
+             <input type="checkbox" id="pageColor" v-model="isDark" v-on:change="colorChange"> 
              <label for="pageColor"> Поменять цвет </label>
             </div>
         <a class="footer-tel" href="tel:89823298129">Тел: 89823298129</a> <br />
@@ -21,10 +21,15 @@
 export default {
     name: 'vueFooter',
     data() {
-    return{
+    return {
         isDark: false
+    } 
+  },
+  methods: {
+    colorChange() {
+        this.$emit('colorChanged', true)
     }
-  }
+    }
    
 }
 </script>

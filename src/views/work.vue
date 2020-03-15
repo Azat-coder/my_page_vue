@@ -1,5 +1,8 @@
 <template>
-  <div class="work" v-bind:class="{darkTheme: isDark}">
+  <div class="work" 
+  v-bind:class="{darkTheme: isDark}"
+  @colorChanged="darkTheme = true"
+  >
     <div class="container">
     <h1>Опыт работы</h1>
 				<table>
@@ -41,15 +44,12 @@
 import vueFooter from '@/components/vueFooter'
 export default {
 name: 'work',
-props:{
-  isDark: Boolean
-},
-
 components: {
     vueFooter
   },
   data() { return {
-    isActive: false
+    isActive: false,
+    
    }
   }
 }
